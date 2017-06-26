@@ -20,10 +20,10 @@ class mainDialog(QtGui.QDialog):
 		mainLayout.addWidget(buttonBox)
 
 		self.setLayout(mainLayout)
-		self.setWindowTitle(u"Midas助手 v1.0 ---By Bill")
+		self.setWindowTitle(u"Midas助手 v1.0 ---By BillHu")
 		
 		icon = QtGui.QIcon()
-		icon.addPixmap(QtGui.QPixmap("icons/16px.png"))
+		icon.addPixmap(QtGui.QPixmap("resource/16px.png"))
 		self.setWindowIcon(icon)
 
 class PreTab(QtGui.QWidget):
@@ -92,7 +92,7 @@ class PreTab(QtGui.QWidget):
 		filedir=self.LE1.text()
 		mctdir=self.LE4.text()
 		s_num=int(self.LE2.text())
-		pro  =int(self.LE3.text())
+		pro  =self.LE3.text()
 		parse=igesrd(filedir,mctdir,pro,s_num)
 		self.mctListBox.clear()
 		self.mctListBox.insertPlainText(parse.mct)

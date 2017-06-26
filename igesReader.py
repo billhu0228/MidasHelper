@@ -3,7 +3,7 @@ from mctReader import mctReader as mctrd
 import re
 
 class igesReader(object):
-	def __init__(self,igesdir,mctdir,pro=1,start_num=1):
+	def __init__(self,igesdir,mctdir,pro='1',start_num=1):
 		super(igesReader, self).__init__()
 		codelist=['106','126']
 		fid=open(igesdir,'r')
@@ -22,7 +22,7 @@ class igesReader(object):
 			beamdata=mctrd(mctdir,[item[0][0],item[-1][0]])
 			print(beamdata.elem)
 			self.mct += ";----------------------------------------;\n"
-			self.mct += "  NAME=%i, %i, %sto%s, 0, 0, SPLINE, 3D\n"%(start_num+ii,pro,beamdata.elem[0],beamdata.elem[1])
+			self.mct += "  NAME=%i, %s, %sto%s, 0, 0, SPLINE, 3D\n"%(start_num+ii,pro,beamdata.elem[0],beamdata.elem[1])
 			self.mct += "    , USER, 0, 0, NO, \n"
 			self.mct += "    STRAIGHT, 0, 0, 0, X, 0, 0\n"
 			self.mct += "    0, YES, Y, 0\n"
@@ -63,7 +63,7 @@ class igesReader(object):
 			return float(da[0])*10**int(da[1])
 #=====================================================================
 if __name__ == '__main__':
-	f=igesReader('TestModel/T3.iges','TestModel/test.mct')
+	f=igesReader('TestModel/T1.iges','TestModel/T1.mct')
 
 
 
