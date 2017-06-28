@@ -45,4 +45,7 @@ Temporary Items
 /resource/*
 /TestModel/*
 /__pycache__/*
+/build/*
+/dist/*
 *.pyc
+*.spec
